@@ -1,8 +1,8 @@
 # # enforce-package-updates (epu)
 
-[![Build Status](https://travis-ci.org/svenkatreddy/execution-time.svg?branch=master)](https://travis-ci.org/svenkatreddy/enforce-package-updates)
+[![Build Status](https://travis-ci.org/svenkatreddy/enforce-package-updates.svg?branch=master)](https://travis-ci.org/svenkatreddy/enforce-package-updates)
 
-[![NPM](https://nodei.co/npm/execution-time.png?stars=true)](https://nodei.co/npm/enforce-package-updates/)
+[![NPM](https://nodei.co/npm/enforce-package-updates.png?stars=true)](https://nodei.co/npm/enforce-package-updates/)
 
 Enforce package updates on any node module or app.
 

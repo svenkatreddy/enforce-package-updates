@@ -7,7 +7,7 @@ const perf = require("execution-time")();
 const outdated = require("./outdated");
 
 function start() {
-  perf.start("apiCall");
+  perf.start("epu-flow");
 
   const configFile = path.resolve(cwd, "epu-config.json");
   let config;

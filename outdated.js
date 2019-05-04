@@ -7,7 +7,7 @@ const perf = require("execution-time")();
 logger.level = "debug";
 
 function exit(status) {
-  const results = perf.stop("apiCall");
+  const results = perf.stop("epu-flow");
   console.log(`It took ${results.preciseWords}`);
   return process.exit(status);
 }
