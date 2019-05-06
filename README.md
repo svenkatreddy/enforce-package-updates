@@ -51,3 +51,6 @@ Following example only enforces updates on packes including `@babel`
   "checkModuleswithName": "@babel"
 }
 ```
+
+Make Requests here for new features or fixing bugs
+https://github.com/svenkatreddy/enforce-package-updates/pulls
