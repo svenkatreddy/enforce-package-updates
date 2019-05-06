@@ -1,6 +1,6 @@
 {
   "name": "enforce-package-updates",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Enforce package updates",
   "main": "outdated.js",
   "scripts": {

@@ -16,10 +16,8 @@ Add it to your `pretest` or `precommit`
 package.json
 ```
 "scripts": {
-    "pretest": "epu"
-  },
-
-
+  "pretest": "epu"
+}
 ```
 
 
