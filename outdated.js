@@ -34,7 +34,7 @@ function checkDependencies(config = {}) {
         }
         return bump;
       });
-      if (outdatedPackages) {
+      if (Array.isArray(outdatedPackages) && outdatedPackages.length > 0) {
         let outdatedPackagesLog = `Please update all your packages, the following packages are out of date \n`;
         outdatedPackages.forEach(outdatedPackage => {
           const { moduleName, latest } = outdatedPackage;
