@@ -4,7 +4,9 @@
 
 [![NPM](https://nodei.co/npm/enforce-package-updates.png?stars=true)](https://nodei.co/npm/enforce-package-updates/)
 
-Enforce package updates on any node module or app.
+Enforce package updates on node module or app.
+Keeps your app always up to date with latest packages.
+Provides a config to ignore semver.
 
 ## Install
 ```
