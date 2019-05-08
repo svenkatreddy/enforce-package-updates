@@ -13,22 +13,49 @@ function exit(status) {
 }
 
 function checkDependencies(config = {}) {
-  const { ignore = "", checkModuleswithName = "" } = config;
+  const { 
+    ignoreSemver = '',
+    ignoreDevDependencies = false,
+    ignoreDependencies = false,
+    checkModuleswithName = '',
+  } = config;
   return npmCheck()
     .then(currentState => {
       const outdatedPackages = currentState.get("packages").filter(pkg => {
-        const { bump, moduleName } = pkg;
-        const isIgnored = [].concat(ignore).some(semver => semver === bump);
-        const ignoreModule = !moduleName.includes(checkModuleswithName);
-        if (ignoreModule) {
+        console.log(pkg);
+        const { 
+          bump,
+          moduleName,
+          devDependency,
+        } = pkg;
+        
+        /* check if module needs to be ignored based off Name */
+        const isIgnoreModule = !moduleName.includes(checkModuleswithName);
+        
+        if (isIgnoreModule) {
           logger.info(
             `Ignoring Module '${moduleName}' because it doesn't contain ${checkModuleswithName} in module name`
           );
           return null;
         }
-        if (isIgnored) {
+        
+        /* Check if module nbeeds to be ignored based off semver*/
+        const isIgnoredSemVer = [].concat(ignoreSemver).some(semver => semver === bump);
+        
+        if (isIgnoredSemVer) {
           return null;
         }
+        
+        /* Check if module nbeeds to be ignored based type of module*/
+        const isDevDependency = devDependency;
+        if (ignoreDevDependencies && isDevDependency) {
+          return null;
+        }
+        const isDependency = !devDependency;
+        if (ignoreDependencies && isDependency) {
+          return null;
+        }
+        
         if (bump) {
           return pkg;
         }

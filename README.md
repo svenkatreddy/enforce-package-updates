@@ -27,20 +27,40 @@ package.json
 You can create file called epu-config.json in your root
 epu-config.json
 
-### ignore 
-options are `major`, `minor`, `patch`
+### ignoreSemver 
+options are `major`, `minor`, `patch` and `nonSemver`
 
 Following example doesn't enforce upgrading major packages.
 ```
 {
-  "ignore": "major"
+  "ignoreSemver": "major"
 }
 ```
 
 Following example doesn't enforce upgrading major, minor packages but enforces patches.
 ```
 {
-  "ignore": ["major", "minor"]
+  "ignoreSemver": ["major", "minor"]
+}
+```
+
+### ignoreDependencies
+This enable to ignore all dependencies. Enforce only on **devDependencies**.
+Default value is `false`.
+Following exmaple ignore all `dependencies`
+```
+{
+  "ignoreDependencies": true
+}
+```
+
+### ignoreDevDependencies
+This enable to ignore all dev dependencies. Enforce only on **dependencies**.
+Default value is `false`.
+Following exmaple ignore all `devDependencies`
+```
+{
+  "ignoreDevDependencies": true
 }
 ```
 
