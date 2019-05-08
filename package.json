@@ -1,5 +1,5 @@
 {
-  "name": "enforce-package-updates",
+  "name": "epu",
   "version": "0.4.1",
   "description": "Enforce package updates",
   "main": "outdated.js",
