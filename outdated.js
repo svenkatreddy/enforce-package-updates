@@ -23,7 +23,6 @@ function checkDependencies(config = {}) {
   return npmCheck()
     .then(currentState => {
       const outdatedPackages = currentState.get("packages").filter(pkg => {
-        console.log(pkg);
         const { bump, moduleName, devDependency } = pkg;
 
         /* check if module needs to be ignored based off Name */
