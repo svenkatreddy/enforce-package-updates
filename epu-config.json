@@ -1,3 +1,4 @@
 {
-  "ignoreSemver": "major"
+  "ignoreSemver": "major",
+  "ignoreModules": ["chai", "prettier", "eslint-plugin-prettier"]
 }
