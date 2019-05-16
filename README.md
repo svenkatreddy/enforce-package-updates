@@ -44,6 +44,16 @@ Following example doesn't enforce upgrading major, minor packages but enforces p
 }
 ```
 
+### ignoreModules
+list of module names to be ignored.
+
+Following example ignores chai, prettier, eslint-plugin-prettier
+```
+{
+  "ignoreModules": ["chai", "prettier", "eslint-plugin-prettier"]
+}
+```
+
 ### ignoreDependencies
 This enable to ignore all dependencies. Enforce only on **devDependencies**.
 Default value is `false`.

@@ -17,7 +17,8 @@ function checkDependencies(config = {}) {
     ignoreSemver = "",
     ignoreDevDependencies = false,
     ignoreDependencies = false,
-    checkModuleswithName = ""
+    checkModuleswithName = "",
+    ignoreModules = []
   } = config;
 
   return npmCheck()
@@ -26,11 +27,25 @@ function checkDependencies(config = {}) {
         const { bump, moduleName, devDependency } = pkg;
 
         /* check if module needs to be ignored based off Name */
-        const isIgnoreModule = !moduleName.includes(checkModuleswithName);
+        const isIgnoredModuleBasedOffOnlyPackages = !moduleName.includes(
+          checkModuleswithName
+        );
 
-        if (isIgnoreModule) {
+        if (isIgnoredModuleBasedOffOnlyPackages) {
           logger.info(
             `Ignoring Module '${moduleName}' because it doesn't contain ${checkModuleswithName} in module name`
+          );
+          return null;
+        }
+
+        /* ignore modules based on list ignoreModules */
+        const isIgnoredModuleBasedOffList = []
+          .concat(ignoreModules)
+          .some(configModuleName => configModuleName === moduleName);
+
+        if (isIgnoredModuleBasedOffList) {
+          logger.info(
+            `Ignoring Module '${moduleName}' because it is excluded in config`
           );
           return null;
         }
